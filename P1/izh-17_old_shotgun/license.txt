@@ -1,0 +1,8 @@
+Model Information:
+* title:	Izh-17 old shotgun
+* source:	https://sketchfab.com/3d-models/izh-17-old-shotgun-3d2f38de91f7497197bb2c5f69a7c6fd
+* author:	Vlad-L (https://sketchfab.com/Vlad-L)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

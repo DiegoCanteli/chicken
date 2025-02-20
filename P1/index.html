@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Videojuego | Motor Web | CanteloElAbuelo</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="gun" src="izh-17_old_shotgun/scene.gltf"></a-asset-item>
+            <a-asset-item id="chicken" src="chicken/scene.gltf"></a-asset-item>
+            <img src="textures/fondo.jpg" id="granja">
+        </a-assets>
+
+        <a-sky src="#granja"></a-sky>
+
+        <!-- Movimiento en forma de cuadrado -->
+        <a-entity class="orbit" position="0 3 0"
+            animation="property: position; to: 3 3 0; dur: 2000; dir: alternate; loop: true"></a-entity>
+        
+        <a-entity class="orbit" position="3 3 0"
+            animation="property: position; to: 3 -3 0; dur: 2000; dir: alternate; loop: true"></a-entity>
+        
+        <a-entity class="orbit" position="3 -3 0"
+            animation="property: position; to: -3 -3 0; dur: 2000; dir: alternate; loop: true"></a-entity>
+        
+        <a-entity class="orbit" position="-3 -3 0"
+            animation="property: position; to: -3 3 0; dur: 2000; dir: alternate; loop: true"></a-entity>
+
+        <a-entity camera look-controls>
+            <a-entity gltf-model="#gun" position="0.195 -0.593 -0.495" rotation="0 0 0"></a-entity>
+            
+            <!-- Marcador de puntuación fijo en la parte superior -->
+            <a-entity position="0 2 -2" visible="false" id="scoreText">
+                <a-text value="0 POLLOS FULMINADOS" color="black" width="2" align="center"></a-text>
+            </a-entity>
+            
+            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .meteor"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"
+                event-set__mouseenter="_event: mouseenter; _target: #scoreText; visible: true"
+                event-set__mouseleave="_event: mouseleave; _target: #scoreText; visible: false">
+            </a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
+    
